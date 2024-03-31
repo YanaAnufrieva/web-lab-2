@@ -34,18 +34,18 @@
     <script>
         const depositTerms = {
             popolnyaemy: {
-                "6 месяцев": 0.20,
-                "1 год": 0.22,
-                "1,5 года": 0.15,
-                "2 года": 0.10
+                "6 месяцев": 1.1005,
+                "1 год": 1.2195,
+                "1,5 года": 1.2253,
+                "2 года": 1.1998
             },
             srochnyy: {
-                "3 месяца": 0.20,
-                "6 месяцев": 0.22,
-                "9 месяцев": 0.23,
-                "1 год": 0.24,
-                "1,5 года": 0.18,
-                "2 года": 0.15
+                "3 месяца": 1.0503,
+                "6 месяцев": 1.1106,
+                "9 месяцев": 1.1728,
+                "1 год": 1.2395,
+                "1,5 года": 1.2704,
+                "2 года": 1.2997
             }
         };
 
@@ -75,7 +75,7 @@
             const depositAmount = parseFloat(depositForm.depositAmount.value);
 
             const interestRate = depositTerms[selectedType][selectedTerm];
-            const totalAmount = depositAmount * (1 + interestRate);
+            const totalAmount = depositAmount * interestRate;
 
             const resultDiv = document.getElementById("result");
             const typeName = (selectedType === "popolnyaemy") ? "Пополняемый" : "Срочный";
